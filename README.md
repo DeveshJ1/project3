@@ -21,6 +21,7 @@ The first command line argument should be a name of an input file containing a m
 The second command line argument should be one of the following keywords: stack or queue (or at least a keyword that starts with the letter 's' or the letter 'q'). If any other keyword is used, the program prints a message indicating that this option is not supported. (The meaning of the two keywords is described below.)
 
 The user may start the program from the command line or run it within an IDE like Eclipse - from the point of view of your program this does not matter.
+
 ALGORITHIM
 You should be able to solve the above maze on paper easily. But how do you tell a computer to find a way out? The computer cannot just look at the whole maze and figure out where the nearest exit is. Think of yourself being stuck in a maze without having a ”global” view. You only have a local view of what is immediately next to you and before you take a step it might be wise to decide if there ever might be a reason to come back to your current location. The algorithm below describes this type of search for a way out of a maze.
 
