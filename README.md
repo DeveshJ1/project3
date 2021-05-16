@@ -14,15 +14,19 @@ implementing your own doubly linked list
 implementing your own stack and queue
 
 PROGRAM USAGE
+
 The program is started from the command line (or run within an IDE). It expects two command line arguments.
 
 The first command line argument should be a name of an input file containing a maze to be used by the program. This project comes with two such files, see the appendix. You can (and should) create your own mazes for testing. The name of the file can be entered as an absolute or relative path.
 
-The second command line argument should be one of the following keywords: stack or queue (or at least a keyword that starts with the letter 's' or the letter 'q'). If any other keyword is used, the program prints a message indicating that this option is not supported. (The meaning of the two keywords is described below.)
+The second command line argument should be one of the following keywords: stack or queue (or at least a keyword that starts with the letter 's' or the letter 'q').
+
+If any other keyword is used, the program prints a message indicating that this option is not supported. (The meaning of the two keywords is described below.)
 
 The user may start the program from the command line or run it within an IDE like Eclipse - from the point of view of your program this does not matter.
 
 ALGORITHIM
+
 You should be able to solve the above maze on paper easily. But how do you tell a computer to find a way out? The computer cannot just look at the whole maze and figure out where the nearest exit is. Think of yourself being stuck in a maze without having a ”global” view. You only have a local view of what is immediately next to you and before you take a step it might be wise to decide if there ever might be a reason to come back to your current location. The algorithm below describes this type of search for a way out of a maze.
 
 The program should keep a set of spaces that need to be examined (places that we might need to get back to in order to test another alternative, for example when we have two choices and we can only follow one of them right away). The exact representation of this set does not matter from the point of view of the algorithm. At the very beginning the set consists of a single space that is the initial position. We explore the maze by repeating the following steps:
@@ -41,16 +45,24 @@ The project comes with several classes that provide a program that implements a 
 The classes given to you are:
 
 Labyrinth - the class that represents a 2D rectangular maze
+
 LabyrinthSearchException - the class defines the exception thrown by the Labyrinth class during the search process
+
 Simulation- the actual program that simulates an exploration of a maze
+
 PossibleLocations - the interface that provides requirements for the two classes that you need to implement
+
 Location - the class the represents a position/location of a single square in the maze
+
 SquareType - the enumerated type describing different types of squares in the maze
-Your task is to provide an implementation of a doubly linked list class and two different implementations of the PossibleLocations interface (that use your own doubly linked list class for their internal storage) included in the project.
+
+Your task is to provide an implementation of a doubly linked list class and two different implementations of the PossibleLocations interface (that use your own 
+doubly linked list class for their internal storage) included in the project.
 
 You may implement additional classes if you wish. You are not allowed to modify any of the classes or interfaces provided to you as part of this project. We will compile your code with the original definitions of those classes. (The only exception to this is if some changes are announced to the entire class to provide any corrections that may be needed.)
 
 DoublyLinkedList class
+
 Your class should be called DoublyLinkedList<E>. It should be a generic class that does not permit null elements.
 
 Your class should implement the following methods and interfaces:
@@ -160,12 +172,15 @@ Returns a string representation of this list. The string representation consists
 Iterable<E> interface
 
 Iterator<E> iterator() Returns an iterator over the elements in this list. This iterator should return elements in the same order in which they are stored in this list.
+  
 StackOfSpaces class
+
 This class should implement the PossibleLocations interface. It should be a reference based stack that uses your own doubly linked list as the internal storage. Note that in order to implement the interface the typical push method needs to be called add and the typical pop method needs to be called remove.
 
 You my implement additional methods if you wish.
 
 QueueOfSpaces class
+
 This class should implement the PossibleLocations interface. It should be a reference based stack that uses your own doubly linked list as the internal storage. Note that in order to implement the interface the typical enqueue method needs to be called add and the typical dequeue method needs to be called remove.
 
 You my implement additional methods if you wish.
